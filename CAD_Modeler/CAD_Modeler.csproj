@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A09AF34-D56D-479D-B53E-F345E0FA1B96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CAD_Modeler</RootNamespace>
+    <AssemblyName>CAD_Modeler</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="devDept.Eyeshot.Control.Win.v2021, Version=2021.2.416.0, Culture=neutral, PublicKeyToken=5385d83d2fb4d7d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\devDept.Eyeshot.Control.Win.v2021.dll</HintPath>
+    </Reference>
+    <Reference Include="devDept.Eyeshot.Control.Win.v2021.Design, Version=2021.2.416.0, Culture=neutral, PublicKeyToken=e7c15929995d127a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Design\devDept.Eyeshot.Control.Win.v2021.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="devDept.Geometry.v2021, Version=2021.2.416.0, Culture=neutral, PublicKeyToken=9440825e8b4733bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\devDept.Geometry.v2021.dll</HintPath>
+    </Reference>
+    <Reference Include="devDept.Graphics.Shaders.v2021, Version=2021.2.416.0, Culture=neutral, PublicKeyToken=54ce5f5f803e4b42, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\devDept.Graphics.Shaders.v2021.dll</HintPath>
+    </Reference>
+    <Reference Include="devDept.Graphics.Win.v2021, Version=2021.2.416.0, Culture=neutral, PublicKeyToken=f3cd437f0d8061b5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\devDept.Graphics.Win.v2021.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Log.Designer.cs">
+      <DependentUpon>Form_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Modeler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Modeler.Designer.cs">
+      <DependentUpon>Form_Modeler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Transformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Transformation.Designer.cs">
+      <DependentUpon>Form_Transformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportExportHelper.cs" />
+    <Compile Include="Action_Modeler\Action_Extrude.cs" />
+    <Compile Include="Action_Modeler\Action_ExtrudeCut.cs" />
+    <Compile Include="Action_Sketch\Action_Sketch_MovePoint.cs" />
+    <Compile Include="Action_Sketch\Action_Sketch_Grip.cs" />
+    <Compile Include="Action_Sketch\Action_Sketch_SketchOut.cs" />
+    <Compile Include="Constraints\Action_AddConstraintItem.cs" />
+    <Compile Include="Constraints\ConstraintItem.cs" />
+    <Compile Include="Action_Sketch\Action_Sketch_CenteredRectangle.cs" />
+    <Compile Include="Action_Sketch\Action_Sketch_Circle.cs" />
+    <Compile Include="Action_Sketch\Action_Sketch_Line.cs" />
+    <Compile Include="Action_Sketch\Action_Sketch_Rectangle.cs" />
+    <Compile Include="Constraints\ConstraintManager.cs" />
+    <Compile Include="Grip.cs" />
+    <Compile Include="GripManager.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="ActionBase.cs" />
+    <Compile Include="Action_Sketch\Action_Sketch_.cs" />
+    <Compile Include="DataTree.cs" />
+    <Compile Include="Main_Form_2_UpperMenu.Designer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Form_1_TitleBar.Designer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ES_V1.cs" />
+    <Compile Include="GRAPHIC_MATH.cs" />
+    <Compile Include="Main_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Form.Designer.cs">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Form_3_Sketch.Designer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI_EFFECT.cs" />
+    <EmbeddedResource Include="Form_Log.resx">
+      <DependentUpon>Form_Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Modeler.resx">
+      <DependentUpon>Form_Modeler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Transformation.resx">
+      <DependentUpon>Form_Transformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Form.resx">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
